@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tu Nombre — Researcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --sidebar-bg: #fce8e2;
+    --sidebar-w: 220px;
+    --font-serif: 'Instrument Serif', Georgia, serif;
+    --font-mono: 'DM Mono', monospace;
+  }
+
+  html, body {
+    height: 100%;
+    background: #fff;
+    font-family: var(--font-mono);
+  }
+
+  .layout {
+    display: flex;
+    min-height: 100vh;
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    width: var(--sidebar-w);
+    min-width: var(--sidebar-w);
+    background: var(--sidebar-bg);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  .sidebar-name {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+    color: #111;
+    letter-spacing: -0.5px;
+  }
+
+  .sidebar-bio {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  .sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-bottom: 1.5rem;
+  }
+
+  .sidebar-nav a {
+    font-size: 12px;
+    color: #555;
+    text-decoration: none;
+    padding: 1px 0;
+    cursor: pointer;
+    font-weight: 300;
+    transition: color 0.15s;
+  }
+
+  .sidebar-nav a:hover { color: #111; }
+
+  .sidebar-nav a.active {
+    font-weight: 400;
+    color: #111;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .sidebar-social {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 1.5rem;
+    line-height: 2;
+    font-weight: 300;
+  }
+
+  .sidebar-social a {
+    color: #555;
+    text-decoration: none;
+    display: block;
+  }
+
+  .sidebar-social a:hover { color: #111; }
+
+  .sidebar-cta {
+    font-size: 12px;
+    font-weight: 400;
+    color: #111;
+    margin-top: auto;
+  }
+
+  /* ── MAIN ── */
+  .main {
+    flex: 1;
+    padding: 2.5rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* ── QUOTE ── */
+  .quote {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: clamp(16px, 2vw, 22px);
+    color: #bbb;
+    line-height: 1.5;
+    margin-bottom: 3rem;
+    max-width: 640px;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── SCATTER ── */
+  .scatter-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+  }
+
+  .item {
+    position: absolute;
+    cursor: pointer;
+    transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .item:hover .item-thumb { outline: 2px solid #111; }
+
+  .item.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8) translateY(10px);
+  }
+
+  .item.visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .item-thumb {
+    display: block;
+    object-fit: cover;
+    background: #e8e8e8;
+    outline: 1px solid #ddd;
+  }
+
+  .item-thumb.placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #aaa;
+    font-family: var(--font-mono);
+    font-weight: 300;
+  }
+
+  .item-label {
+    font-size: 10px;
+    color: #aaa;
+    font-weight: 300;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-family: var(--font-mono);
+  }
+
+  /* ── DETAIL VIEW ── */
+  .detail-view {
+    display: none;
+    max-width: 600px;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .detail-view.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .detail-back {
+    font-size: 11px;
+    color: #aaa;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 300;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    background: none;
+    border: none;
+    font-family: var(--font-mono);
+    padding: 0;
+  }
+
+  .detail-back:hover { color: #111; }
+
+  .detail-title {
+    font-family: var(--font-serif);
+    font-size: 32px;
+    font-weight: 400;
+    margin-bottom: 0.4rem;
+    color: #111;
+    line-height: 1.2;
+  }
+
+  .detail-meta {
+    font-size: 11px;
+    color: #aaa;
+    margin-bottom: 2rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .detail-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 8px;
+    margin-bottom: 2rem;
+  }
+
+  .detail-images img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+  }
+
+  .detail-images .img-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: #e8e8e8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: #aaa;
+    font-weight: 300;
+  }
+
+  .detail-body {
+    font-size: 13px;
+    color: #444;
+    line-height: 1.9;
+    font-weight: 300;
+  }
+
+  .detail-body p { margin-bottom: 1rem; }
+  .detail-body h2 { font-family: var(--font-serif); font-size: 20px; font-weight: 400; margin: 1.5rem 0 0.5rem; color: #111; }
+  .detail-body a { color: #111; }
+
+  /* category dot */
+  .dot {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    margin-right: 4px;
+    vertical-align: middle;
+  }
+  .dot-projects { background: #888; }
+  .dot-teaching { background: #aaa; }
+  .dot-news     { background: #bbb; }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-name">Tu<br>Nombre<br>Aquí</div>
+    <div class="sidebar-bio">I am a researcher and designer studying [tu área de investigación]</div>
+
+    <nav class="sidebar-nav">
+      <a class="active" onclick="filterItems(this,'all')">All</a>
+      <a onclick="filterItems(this,'projects')">Projects</a>
+      <a onclick="filterItems(this,'teaching')">Teaching</a>
+      <a onclick="filterItems(this,'news')">News</a>
+    </nav>
+
+    <div class="sidebar-social">
+      You can find me also on<br>
+      <a href="https://linkedin.com" target="_blank">↗ LinkedIn</a>
+      <a href="https://instagram.com" target="_blank">↗ Instagram</a>
+    </div>
+
+    <div class="sidebar-cta">Always open to chat :)</div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main" id="main">
+
+    <!-- QUOTE -->
+    <div class="quote" id="quoteEl">
+      The world is more of a mess<br>
+      than we think.<br>
+      Embrace it, instead of<br>
+      trying to tidy everything up!
+    </div>
+
+    <!-- GALLERY -->
+    <div id="galleryView">
+      <div class="scatter-wrapper" id="scatter"></div>
+    </div>
+
+    <!-- DETAIL -->
+    <div class="detail-view" id="detailView">
+      <button class="detail-back" onclick="closeDetail()">← back</button>
+      <div class="detail-title" id="detailTitle"></div>
+      <div class="detail-meta" id="detailMeta"></div>
+      <div class="detail-images" id="detailImages"></div>
+      <div class="detail-body" id="detailBody"></div>
+    </div>
+
+  </main>
+</div>
+
+<script>
+/*
+  ─────────────────────────────────────────
+  ITEMS — edita esta lista con tus proyectos
+  ─────────────────────────────────────────
+  Cada item tiene:
+    id:      número único
+    cat:     'projects' | 'teaching' | 'news'
+    label:   nombre del archivo (se muestra bajo la imagen)
+    w, h:    ancho y alto en px del thumbnail en el scatter
+    thumb:   ruta a la imagen thumbnail (ej: 'projects/mi-foto.jpg')
+             si no tienes imagen aún, deja '' y aparece un placeholder gris
+    title:   título de la página de detalle
+    meta:    línea de metadatos (categoría, año, institución...)
+    images:  array de rutas a imágenes para la página de detalle
+    body:    HTML del contenido de la página (tipo markdown convertido)
+  ─────────────────────────────────────────
+*/
+const ITEMS = [
+  {
+    id: 1, cat: 'projects',
+    label: 'feminist-dataviz.jpg', w: 120, h: 140,
+    thumb: '',
+    title: 'Feminist Data Visualization',
+    meta: 'Project · 2024',
+    images: ['',''],
+    body: `<p>Describe aquí tu proyecto. ¿Qué pregunta de investigación responde? ¿Qué metodología usaste?</p>
+           <h2>Approach</h2>
+           <p>Explica cómo lo abordaste, con quién colaboraste, qué encontraste.</p>`
+  },
+  {
+    id: 2, cat: 'projects',
+    label: 'scatter-study.jpg', w: 95, h: 110,
+    thumb: '',
+    title: 'Scatter Study',
+    meta: 'Project · 2023',
+    images: [''],
+    body: `<p>Descripción del proyecto. Puedes incluir links: <a href="#">ver paper</a>.</p>`
+  },
+  {
+    id: 3, cat: 'projects',
+    label: 'qual-methods.jpg', w: 130, h: 100,
+    thumb: '',
+    title: 'Qualitative Methods in Vis',
+    meta: 'Project · 2023',
+    images: ['','',''],
+    body: `<p>Descripción del proyecto.</p>`
+  },
+  {
+    id: 4, cat: 'teaching',
+    label: 'datavis-course.jpg', w: 110, h: 90,
+    thumb: '',
+    title: 'Data Visualization — Spring 2024',
+    meta: 'Teaching · Linköping University · 7.5 hp',
+    images: ['',''],
+    body: `<p>Describe el curso: objetivos, estructura, metodología.</p>
+           <h2>Materials</h2>
+           <p>Links a syllabus, lecturas, ejercicios.</p>`
+  },
+  {
+    id: 5, cat: 'teaching',
+    label: 'workshop-methods.jpg', w: 90, h: 115,
+    thumb: '',
+    title: 'Research Methods Workshop',
+    meta: 'Teaching · 2023',
+    images: [''],
+    body: `<p>Workshop de un día sobre métodos cualitativos para investigadoras en diseño.</p>`
+  },
+  {
+    id: 6, cat: 'news',
+    label: 'chi-2024.jpg', w: 100, h: 85,
+    thumb: '',
+    title: 'Paper accepted at CHI 2024',
+    meta: 'News · March 2024',
+    images: [''],
+    body: `<p>Nuestro paper fue aceptado en ACM CHI 2024. Puedes leerlo <a href="#">aquí</a>.</p>`
+  },
+  {
+    id: 7, cat: 'news',
+    label: 'talk-stockholm.jpg', w: 85, h: 100,
+    thumb: '',
+    title: 'Talk at Stockholm University',
+    meta: 'News · January 2024',
+    images: [''],
+    body: `<p>Gave an invited talk on feminist approaches to information visualization.</p>`
+  },
+  {
+    id: 8, cat: 'news',
+    label: 'seminar-phd.jpg', w: 105, h: 95,
+    thumb: '',
+    title: 'New PhD seminar series',
+    meta: 'News · Ongoing',
+    images: [''],
+    body: `<p>Monthly seminars for PhD students on research writing and academic presentation.</p>`
+  },
+];
+
+/* ── scatter layout ── */
+let currentFilter = 'all';
+const scatter = document.getElementById('scatter');
+
+function randomPositions(n, containerW, containerH) {
+  const positions = [];
+  const margin = 20;
+  for (let i = 0; i < n; i++) {
+    let x, y, ok, attempts = 0;
+    do {
+      x = margin + Math.random() * (containerW - 160);
+      y = margin + Math.random() * (containerH - 160);
+      ok = positions.every(p => Math.abs(p.x - x) > 100 || Math.abs(p.y - y) > 80);
+      attempts++;
+    } while (!ok && attempts < 30);
+    positions.push({ x: Math.round(x), y: Math.round(y) });
+  }
+  return positions;
+}
+
+function buildScatter() {
+  scatter.innerHTML = '';
+  const W = scatter.parentElement.clientWidth - 40 || 600;
+  const H = 560;
+  scatter.style.minHeight = H + 'px';
+
+  const positions = randomPositions(ITEMS.length, W, H);
+
+  ITEMS.forEach((item, i) => {
+    const p = positions[i];
+    const el = document.createElement('div');
+    el.className = 'item visible';
+    el.dataset.id = item.id;
+    el.dataset.cat = item.cat;
+    el.style.left = p.x + 'px';
+    el.style.top = p.y + 'px';
+    el.style.width = item.w + 'px';
+
+    let thumbHTML;
+    if (item.thumb) {
+      thumbHTML = `<img class="item-thumb" src="${item.thumb}" width="${item.w}" height="${item.h}" alt="${item.title}" loading="lazy">`;
+    } else {
+      thumbHTML = `<div class="item-thumb placeholder" style="width:${item.w}px;height:${item.h}px">${item.label}</div>`;
+    }
+
+    el.innerHTML = `${thumbHTML}<div class="item-label"><span class="dot dot-${item.cat}"></span>${item.label}</div>`;
+    el.addEventListener('click', () => openDetail(item.id));
+    scatter.appendChild(el);
+  });
+}
+
+function filterItems(el, cat) {
+  currentFilter = cat;
+  document.querySelectorAll('.sidebar-nav a').forEach(a => a.classList.remove('active'));
+  el.classList.add('active');
+
+  const W = scatter.parentElement.clientWidth - 40 || 600;
+  const H = 560;
+  const visible = ITEMS.filter(i => cat === 'all' || i.cat === cat);
+  const positions = randomPositions(visible.length, W, H);
+
+  let vi = 0;
+  document.querySelectorAll('.item').forEach(el => {
+    const match = cat === 'all' || el.dataset.cat === cat;
+    if (match) {
+      const p = positions[vi++];
+      el.style.left = p.x + 'px';
+      el.style.top = p.y + 'px';
+      el.classList.remove('hidden');
+      el.classList.add('visible');
+    } else {
+      el.classList.add('hidden');
+      el.classList.remove('visible');
+    }
+  });
+}
+
+function openDetail(id) {
+  const item = ITEMS.find(i => i.id === id);
+  document.getElementById('detailTitle').textContent = item.title;
+  document.getElementById('detailMeta').innerHTML =
+    `<span class="dot dot-${item.cat}"></span>${item.meta}`;
+
+  const imgs = document.getElementById('detailImages');
+  imgs.innerHTML = item.images.map(src =>
+    src
+      ? `<img src="${src}" alt="">`
+      : `<div class="img-placeholder">imagen aquí</div>`
+  ).join('');
+
+  document.getElementById('detailBody').innerHTML = item.body;
+  document.getElementById('quoteEl').style.display = 'none';
+  document.getElementById('galleryView').style.display = 'none';
+  document.getElementById('detailView').classList.add('active');
+}
+
+function closeDetail() {
+  document.getElementById('quoteEl').style.display = '';
+  document.getElementById('galleryView').style.display = '';
+  document.getElementById('detailView').classList.remove('active');
+}
+
+buildScatter();
+window.addEventListener('resize', buildScatter);
+</script>
+</body>
+</html>
