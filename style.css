@@ -1,0 +1,304 @@
+/* ── FONTS ── */
+@font-face {
+  font-family: 'FlorDeRuina-Ruina';
+  src: url('fonts/woff2/FlorDeRuina-Ruina.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'FlorDeRuina-Fractura';
+  src: url('fonts/woff2/FlorDeRuina-Fractura.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'FlorDeRuina-Flor';
+  src: url('fonts/woff2/FlorDeRuina-Flor.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'FlorDeRuina-Germen';
+  src: url('fonts/woff2/FlorDeRuina-Germen.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'FlorDeRuina-Semilla';
+  src: url('fonts/woff2/FlorDeRuina-Semilla.woff2') format('woff2');
+}
+
+/* ── VARIABLES ── */
+/* Para cambiar la variante de tu nombre, edita --font-display */
+:root {
+  --font-display: 'FlorDeRuina-Ruina', Georgia, serif;   /* tu nombre — prueba las 5 variantes */
+  --font-quote:   'Rock 3D', Georgia, serif;              /* la frase de arriba */
+  --font-serif:   'Instrument Serif', Georgia, serif;     /* títulos de detalle */
+  --font-sans:    'Satoshi', sans-serif;                  /* todo lo demás */
+
+  --sidebar-bg: #fce8e2;
+  --sidebar-w: 220px;
+}
+
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  background: #fff;
+  font-family: var(--font-sans);
+}
+
+/* ── LAYOUT ── */
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* ── SIDEBAR ── */
+.sidebar {
+  width: var(--sidebar-w);
+  min-width: var(--sidebar-w);
+  background: var(--sidebar-bg);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar-name {
+  font-family: var(--font-display);
+  font-size: 28px;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+  color: #111;
+  letter-spacing: -0.5px;
+}
+
+.sidebar-bio {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-bottom: 1.5rem;
+}
+
+.sidebar-nav a {
+  font-size: 12px;
+  color: #555;
+  text-decoration: none;
+  padding: 1px 0;
+  cursor: pointer;
+  font-weight: 300;
+  transition: color 0.15s;
+}
+
+.sidebar-nav a:hover { color: #111; }
+
+.sidebar-nav a.active {
+  font-weight: 400;
+  color: #111;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.sidebar-social {
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 1.5rem;
+  line-height: 2;
+  font-weight: 300;
+}
+
+.sidebar-social a {
+  color: #555;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar-social a:hover { color: #111; }
+
+.sidebar-cta {
+  font-size: 12px;
+  font-weight: 400;
+  color: #111;
+  margin-top: auto;
+}
+
+/* ── MAIN ── */
+.main {
+  flex: 1;
+  padding: 2.5rem 2rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── QUOTE ── */
+.quote {
+  font-family: var(--font-quote);
+  font-size: clamp(14px, 1.8vw, 20px);
+  color: #bbb;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  max-width: 640px;
+  letter-spacing: 0.02em;
+}
+
+/* ── SCATTER ── */
+.scatter-wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 520px;
+}
+
+.item {
+  position: absolute;
+  cursor: pointer;
+  transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.item:hover .item-thumb { outline: 2px solid #111; }
+
+.item.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8) translateY(10px);
+}
+
+.item.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.item-thumb {
+  display: block;
+  object-fit: cover;
+  background: #e8e8e8;
+  outline: 1px solid #ddd;
+}
+
+.item-thumb.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  color: #aaa;
+  font-family: var(--font-sans);
+  font-weight: 300;
+}
+
+.item-label {
+  font-size: 10px;
+  color: #aaa;
+  font-weight: 300;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: var(--font-sans);
+}
+
+/* ── DETAIL VIEW ── */
+.detail-view {
+  display: none;
+  max-width: 600px;
+  animation: fadeIn 0.3s ease;
+}
+
+.detail-view.active { display: block; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.detail-back {
+  font-size: 11px;
+  color: #aaa;
+  cursor: pointer;
+  margin-bottom: 2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 300;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  background: none;
+  border: none;
+  font-family: var(--font-sans);
+  padding: 0;
+}
+
+.detail-back:hover { color: #111; }
+
+.detail-title {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+  color: #111;
+  line-height: 1.2;
+}
+
+.detail-meta {
+  font-size: 11px;
+  color: #aaa;
+  margin-bottom: 2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.detail-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 8px;
+  margin-bottom: 2rem;
+}
+
+.detail-images img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+
+.detail-images .img-placeholder {
+  width: 100%;
+  aspect-ratio: 4/3;
+  background: #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: #aaa;
+  font-weight: 300;
+}
+
+.detail-body {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.9;
+  font-weight: 300;
+}
+
+.detail-body p  { margin-bottom: 1rem; }
+.detail-body h2 { font-family: var(--font-serif); font-size: 20px; font-weight: 400; margin: 1.5rem 0 0.5rem; color: #111; }
+.detail-body a  { color: #111; }
+
+/* ── CATEGORY DOTS ── */
+.dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.dot-projects { background: #888; }
+.dot-teaching { background: #aaa; }
+.dot-news     { background: #bbb; }
