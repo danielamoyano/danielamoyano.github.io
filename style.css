@@ -299,7 +299,7 @@ html, body {
   margin-right: 4px;
   vertical-align: middle;
 }
-.dot-projects { background: #888; }
-.dot-teaching { background: #aaa; }
-.dot-news     { background: #bbb; }
-.dot-papers { background: #999; }
+.dot-projects { background: #eac841; }
+.dot-teaching { background: #e94e32; }
+.dot-news     { background: #79b6f9; }
+.dot-papers { background: #b791f2; }
