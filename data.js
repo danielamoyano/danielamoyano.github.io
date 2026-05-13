@@ -93,4 +93,14 @@ const ITEMS = [
     images: [''],
     body: `<p>Monthly seminars for PhD students on research writing and academic presentation.</p>`
   },
+  {
+  id: 9, cat: 'papers',
+  label: 'mi-paper.jpg', w: 110, h: 130,
+  thumb: '',
+  title: 'Nombre del paper',
+  meta: 'Paper · CHI 2024',
+  images: [''],
+  body: `<p>Abstract o descripción. <a href="#">PDF</a></p>`
+},
+
 ];
