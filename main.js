@@ -98,5 +98,12 @@ function closeDetail() {
   document.getElementById('detailView').classList.remove('active');
 }
 
+function goHome() {
+  closeDetail();
+  setTimeout(() => {
+    filterItems(document.querySelector('.sidebar-nav a'), 'all');
+  }, 50);
+}
+
 buildScatter();
 window.addEventListener('resize', buildScatter);
