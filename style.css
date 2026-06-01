@@ -303,3 +303,41 @@ html, body {
 .dot-teaching { background: #e94e32; }
 .dot-news     { background: #79b6f9; }
 .dot-papers { background: #b791f2; }
+
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 1.5rem;
+  }
+
+  .sidebar-name {
+    font-size: clamp(32px, 8vw, 48px);
+  }
+
+  .main {
+    padding: 1.5rem;
+  }
+
+  .quote {
+    font-size: clamp(16px, 5vw, 24px);
+    margin-bottom: 2rem;
+  }
+
+  .scatter-wrapper {
+    min-height: 400px;
+  }
+
+  .detail-title {
+    font-size: 24px;
+  }
+
+  .detail-images {
+    grid-template-columns: 1fr;
+  }
+}

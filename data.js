@@ -95,24 +95,7 @@ I'll be attending the Craft-based Data Physicalization workshop, bringing a proj
 
 <p>For my PhD, I'm also exploring the backstories of research 💭 — the nonlinear, complex, and emotionally charged processes that often go hidden. I would love to talk with you about how you navigate these messy, behind-the-scenes moments, but also about how these hidden aspects can be generative, and how we might find ways to disseminate them.</p>`
   },
-  {
-    id: 7, cat: 'news',
-    label: 'talk-stockholm.jpg', w: 85, h: 100,
-    thumb: '',
-    title: 'Talk at Stockholm University',
-    meta: 'News · January 2024',
-    images: [''],
-    body: `<p>Gave an invited talk on feminist approaches to information visualization.</p>`
-  },
-  {
-    id: 8, cat: '',
-    label: 'seminar-phd.jpg', w: 105, h: 95,
-    thumb: '',
-    title: 'New PhD seminar series',
-    meta: 'News · Ongoing',
-    images: [''],
-    body: `<p>Monthly seminars for PhD students on research writing and academic presentation.</p>`
-  },
+  
   {
   id: 9, cat: 'papers',
   label: 'pictorial.jpg', w: 150, h: 110,
@@ -179,6 +162,29 @@ outcomes and calls for plurality in HCI</p>`
   elements. The framework is put to the test by analyzing 17 data stories about water-related issues. Our observations from 
   the survey illustrate how data visualizations can shape the framing of complex topics. 
   <a href="https://onlinelibrary.wiley.com/doi/10.1111/cgf.14815/">Link</a></p>`
+},
+
+
+{
+  id: 12, cat: 'papers',
+  label: 'sex-differences.jpg', w: 150, h: 123,
+  thumb: 'papers/sex-differences.jpg',
+  title: 'Sex differences in work-related accidents extracted from free text in Spanish using natural language processing',
+  meta: 'Article · BMC Public Health',
+  images: ['papers/sex-differences.jpg'],
+  body: `<h2>Abstract</h2>
+  <p><strong>Background</strong>
+Evidence from the global north shows that women and men significantly differ in work accidents and occupational disease rates. However, more data is needed for countries elsewhere.
+</p><p>
+<strong>Methods</strong>
+Using natural language processing (NLP), we extracted accident mechanisms from 350,000 admission reports from the largest occupational health provider in Chile. In addition, using the same technique, we normalize occupations written in free text, following the nomenclature from the International Labour Organization (ILO).
+</p><p>
+<strong>Results</strong>
+We found that in 57.3% of accidents, a man is affected, while in 42.7% is a woman. The most common occupation for men is operator, while for women, it is related to cleaning duties. The most common form of accident for women is falling from the same height while for men is contact with sharp objects. In this work, we demonstrate the power of NLP in the massive analysis of work-related accidents by reporting the use of large language models with human expert annotation to evaluate mechanisms extraction.
+</p><p>
+<strong>Conclusion</strong>
+By sharing our prompts and code, we aim to help other institutions and countries extract crucial information from free text to a controlled vocabulary of ILO. Future work includes the analysis of commuting accidents and occupational diseases.
+ </p><p> <a href="https://link.springer.com/article/10.1186/s12889-025-24130-z">Link</a></p>`
 },
 
 ];
