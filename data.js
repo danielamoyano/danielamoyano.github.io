@@ -47,11 +47,11 @@ The development of Sof+IA was guided by feminist principles of Artificial Intell
   },
   {
     id: 3, cat: 'projects',
-    label: 'qual-methods.jpg', w: 130, h: 100,
-    thumb: '',
+    label: 'dissemination.jpg', w: 130, h: 100,
+    thumb: 'projects/zine.jpg',
     title: 'Dissemination',
     meta: 'Project · 2023',
-    images: ['', '', ''],
+    images: ['projects/zine.jpg', '', ''],
     body: `<p><strong>Knowledge is shaped by the format in which we decide to disseminate it.</strong>
 For many years, the scientific community has disseminated its findings through scientific articles and conference presentations. However, this linear and clean format leaves out many things that happen during the research process. For this reason, I am currently working on different dissemination projects through different artifacts, such as zines, posters, exhibitions, and pictorials to communicate research in different formats. I want to understand how the format in which we communicate our research also shapes the research itself, exploring new ethical and epistemic implications of communicating for broader and/or different audiences.</p>`
   },
