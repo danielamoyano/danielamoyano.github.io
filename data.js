@@ -45,16 +45,7 @@ The development of Sof+IA was guided by feminist principles of Artificial Intell
     analysis, and visualization, and Public Policy and Advocacy for the use of 
     this data in decision-making and public debate.</p>`
   },
-  {
-    id: 3, cat: 'projects',
-    label: 'dissemination.jpg', w: 130, h: 100,
-    thumb: 'projects/zine.jpg',
-    title: 'Dissemination',
-    meta: 'Project · 2023',
-    images: ['projects/zine.jpg', '', ''],
-    body: `<p><strong>Knowledge is shaped by the format in which we decide to disseminate it.</strong>
-For many years, the scientific community has disseminated its findings through scientific articles and conference presentations. However, this linear and clean format leaves out many things that happen during the research process. For this reason, I am currently working on different dissemination projects through different artifacts, such as zines, posters, exhibitions, and pictorials to communicate research in different formats. I want to understand how the format in which we communicate our research also shapes the research itself, exploring new ethical and epistemic implications of communicating for broader and/or different audiences.</p>`
-  },
+ 
   {
     id: 4, cat: 'teaching',
     label: 'vis_feminista.jpg', w: 110, h: 90,
@@ -75,15 +66,7 @@ Data production and its absences: what gets measured and what doesn't. Historica
 <p>Session 4 — Visualization as Activism, Care, and Creativity
 Data visualization as political and social transformation practice. Questioning extractive and normative logics. Creativity as a strategy for imagining other ways of representing and communicating data.</p>`
   },
-  {
-    id: 5, cat: 'teaching',
-    label: 'workshop-methods.jpg', w: 90, h: 115,
-    thumb: '',
-    title: 'Research Methods Workshop',
-    meta: 'Teaching · 2023',
-    images: [''],
-    body: `<p>Workshop de un día sobre métodos cualitativos para investigadoras en diseño.</p>`
-  },
+
   {
     id: 6, cat: 'news',
     label: 'chi-2026.jpg', w: 150, h: 90,
@@ -96,7 +79,8 @@ I'll be attending the Craft-based Data Physicalization workshop, bringing a proj
 
 <p>For my PhD, I'm also exploring the backstories of research 💭 — the nonlinear, complex, and emotionally charged processes that often go hidden. I would love to talk with you about how you navigate these messy, behind-the-scenes moments, but also about how these hidden aspects can be generative, and how we might find ways to disseminate them.</p>`
   },
-  
+
+ 
   {
   id: 9, cat: 'papers',
   label: 'pictorial.jpg', w: 150, h: 110,
@@ -165,9 +149,39 @@ outcomes and calls for plurality in HCI</p>`
   <a href="https://onlinelibrary.wiley.com/doi/10.1111/cgf.14815/">Link</a></p>`
 },
 
-
 {
   id: 12, cat: 'papers',
+  label: 'manifiesto.jpg', w: 150, h: 150,
+  thumb: 'papers/adela_manifiesto.jpg',
+  title: 'Núcleo Adela’s manifesto: Identity as Collective Creation',
+  meta: 'Article · CG&A 2024',
+  images: ['papers/adela_manifiesto.jpg','papers/manifiesto.jpg' ],
+  body: `<h2>Abstract</h2>
+  <p>
+Núcleo Adela emerged in Chile in 2024 when a group of designers and educators gathered around a common concern: How can feminist 
+design be practiced and taught in the Global South? This question, which challenged the current design state, marked the beginning 
+of a collective project seeking to define itself and express its vision publicly. The process made us question how we wanted to build 
+our identity, driving us to reflect deeply on who we are and how we represent ourselves. This sparked an exercise in co-designing 
+identity, where poetry and openness became key tools in shaping a sensitive and deliberately elusive definition. This text reflects 
+that creative experience as an attempt to explore and share the journey toward an identity built through dialogue, collaboration, and introspection.
+  <a href="https://dl.designresearchsociety.org/learnxdesign/learnxdesign2025/visualpapers/2/">Link</a></p>`
+},
+
+ {
+    id: 13, cat: 'news',
+    label: 'chi-2026.jpg', w: 150, h: 90,
+    thumb: 'news/chi2026.jpg',
+    title: 'Attended CHI 2026',
+    meta: 'News · April 2026',
+    images: ['news/chi2026.jpg'],
+    body: `<p>Next week I'll be at CHI Barcelona. I'm so excited to experience my first CHI!
+I'll be attending the Craft-based Data Physicalization workshop, bringing a project I've been thinking about for a while: how we can introduce friction into data visualization as a form of resistance to the logics of productivity and efficiency 🐢  <a href="https://osf.io/9qdfp/files/kzxa3">Read more here</a>.</p>
+
+<p>For my PhD, I'm also exploring the backstories of research 💭 — the nonlinear, complex, and emotionally charged processes that often go hidden. I would love to talk with you about how you navigate these messy, behind-the-scenes moments, but also about how these hidden aspects can be generative, and how we might find ways to disseminate them.</p>`
+  },
+
+  {
+  id: 14, cat: 'papers',
   label: 'sex-differences.jpg', w: 150, h: 123,
   thumb: 'papers/sex-differences.jpg',
   title: 'Sex differences in work-related accidents extracted from free text in Spanish using natural language processing',
