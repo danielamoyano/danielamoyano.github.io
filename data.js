@@ -169,10 +169,10 @@ outcomes and calls for plurality in HCI</p>`
 {
   id: 9, cat: 'papers',
   label: 'manifiesto.jpg', w: 150, h: 150,
-  thumb: 'papers/adela_manifiesto.jpg',
+  thumb: 'papers/adela_manifiesto.png',
   title: 'Núcleo Adela’s manifesto: Identity as Collective Creation',
   meta: 'Article · CG&A 2024',
-  images: ['papers/adela_manifiesto.jpg','papers/manifiesto.jpg' ],
+  images: ['papers/adela_manifiesto.png','papers/manifiesto.png' ],
   body: `<h2>Abstract</h2>
   <p>
 Núcleo Adela emerged in Chile in 2024 when a group of designers and educators gathered around a common concern: How can feminist 
