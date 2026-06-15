@@ -47,7 +47,7 @@ The development of Sof+IA was guided by feminist principles of Artificial Intell
   },
 
    {
-    id: 2, cat: 'dissemination',
+    id: 3, cat: 'dissemination',
     label: 'dissemination.jpg', w: 150, h: 150,
     thumb: 'projects/odegi.jpg',
     title: 'Dissemination beyond scientific paper',
@@ -85,7 +85,7 @@ Data visualization as political and social transformation practice. Questioning 
   },
 
   {
-    id: 6, cat: 'news',
+    id: 5, cat: 'news',
     label: 'chi-2026.jpg', w: 150, h: 90,
     thumb: 'news/chi2026.jpg',
     title: 'Attended CHI 2026',
@@ -99,7 +99,7 @@ I'll be attending the Craft-based Data Physicalization workshop, bringing a proj
 
  
   {
-  id: 9, cat: 'papers',
+  id: 6, cat: 'papers',
   label: 'pictorial.jpg', w: 150, h: 110,
   thumb: 'papers/pictorial.jpg',
   title: 'Design Vibes in a Science Museum: from @Science to @🤗',
@@ -123,7 +123,7 @@ outcomes and calls for plurality in HCI</p>`
 },
 
 {
-  id: 10, cat: 'papers',
+  id: 7, cat: 'papers',
   label: 'non_oppression.jpg', w: 150, h: 150,
   thumb: 'papers/non_oppression.jpg',
   title: 'Data Visualization for Non-oppression and Liberation: A Feminist Approach',
@@ -144,7 +144,7 @@ outcomes and calls for plurality in HCI</p>`
 },
 
 {
-  id: 11, cat: 'papers',
+  id: 8, cat: 'papers',
   label: 'water.jpg', w: 150, h: 150,
   thumb: 'papers/water.jpg',
   title: 'Data stories of water: studying the communicative role of data visualizations within long‐form journalismh',
@@ -167,7 +167,7 @@ outcomes and calls for plurality in HCI</p>`
 },
 
 {
-  id: 12, cat: 'papers',
+  id: 9, cat: 'papers',
   label: 'manifiesto.jpg', w: 150, h: 150,
   thumb: 'papers/adela_manifiesto.jpg',
   title: 'Núcleo Adela’s manifesto: Identity as Collective Creation',
@@ -185,7 +185,7 @@ that creative experience as an attempt to explore and share the journey toward a
 },
 
  {
-    id: 13, cat: 'news',
+    id: 10, cat: 'news',
     label: 'chi-2026.jpg', w: 150, h: 90,
     thumb: 'news/chi2026.jpg',
     title: 'Attended CHI 2026',
@@ -198,7 +198,7 @@ I'll be attending the Craft-based Data Physicalization workshop, bringing a proj
   },
 
   {
-  id: 14, cat: 'papers',
+  id: 11, cat: 'papers',
   label: 'sex-differences.jpg', w: 150, h: 123,
   thumb: 'papers/sex-differences.jpg',
   title: 'Sex differences in work-related accidents extracted from free text in Spanish using natural language processing',
