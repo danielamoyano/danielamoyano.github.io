@@ -49,7 +49,7 @@ The development of Sof+IA was guided by feminist principles of Artificial Intell
    {
     id: 3, cat: 'dissemination',
     label: 'zine3.jpg', w: 150, h: 200,
-    thumb: 'projects/dissemination.jpg',
+    thumb: 'projects/zine3.jpg',
     title: 'Dissemination beyond scientific paper',
     meta: 'Project · 2026',
     images: ['projects/zine.jpg', 'projects/zine2.jpg','projects/zine3.jpg'],
