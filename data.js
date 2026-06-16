@@ -48,11 +48,11 @@ The development of Sof+IA was guided by feminist principles of Artificial Intell
 
    {
     id: 3, cat: 'dissemination',
-    label: 'dissemination.jpg', w: 150, h: 150,
+    label: 'zine3.jpg', w: 150, h: 200,
     thumb: 'projects/dissemination.jpg',
     title: 'Dissemination beyond scientific paper',
     meta: 'Project · 2026',
-    images: ['projects/odegi.jpg', 'projects/odegi1.jpg','projects/odegi2.jpg'],
+    images: ['projects/zine.jpg', 'projects/zine2.jpg','projects/zine3.jpg'],
     body: `<p>Knowledge is shaped by the format in which we decide to disseminate it. 
     For many years, the scientific community has disseminated its findings through scientific 
     articles and conference presentations. However, this linear and clean format leaves out
