@@ -49,7 +49,7 @@ The development of Sof+IA was guided by feminist principles of Artificial Intell
    {
     id: 3, cat: 'dissemination',
     label: 'dissemination.jpg', w: 150, h: 150,
-    thumb: 'projects/odegi.jpg',
+    thumb: 'projects/dissemination.jpg',
     title: 'Dissemination beyond scientific paper',
     meta: 'Project · 2026',
     images: ['projects/odegi.jpg', 'projects/odegi1.jpg','projects/odegi2.jpg'],
@@ -186,15 +186,24 @@ that creative experience as an attempt to explore and share the journey toward a
 
  {
     id: 10, cat: 'news',
-    label: 'chi-2026.jpg', w: 150, h: 90,
-    thumb: 'news/chi2026.jpg',
-    title: 'Attended CHI 2026',
+    label: 'dis-2026.jpg', w: 200, h: 100,
+    thumb: 'news/dis2026.png',
+    title: 'Attended DIS 2026',
     meta: 'News · April 2026',
-    images: ['news/chi2026.jpg'],
-    body: `<p>Next week I'll be at CHI Barcelona. I'm so excited to experience my first CHI!
-I'll be attending the Craft-based Data Physicalization workshop, bringing a project I've been thinking about for a while: how we can introduce friction into data visualization as a form of resistance to the logics of productivity and efficiency 🐢  <a href="https://osf.io/9qdfp/files/kzxa3">Read more here</a>.</p>
-
-<p>For my PhD, I'm also exploring the backstories of research 💭 — the nonlinear, complex, and emotionally charged processes that often go hidden. I would love to talk with you about how you navigate these messy, behind-the-scenes moments, but also about how these hidden aspects can be generative, and how we might find ways to disseminate them.</p>`
+    images: ['news/dis2026.png', 'news/dis2026_2.png'],
+    body: `<p>I am going to DIS Singapore :). This will be my first time at this conference, my first time presenting at a conference, and 
+my first time without any of my lab colleagues. So, as you can imagine, I am very excited but also nervous. Please, if you will be there, let me know :)</p>
+<p>You can find me at the workshop "Embodied Vulnerability in Design Research". This workshop comes at exactly the right time, 
+as I have been wondering in my research what it means to be vulnerable when you show your work — this non-linear, chaotic 
+process in which, at some point, you need to put everything you have done out into the world and get exposed to what you have 
+been thinking about for a long time. I applied with a zine (also part of my research, as one of the formats I explore for disseminating research).</p>
+<p>Then I will be presenting our work in the Museums, Archives, and Civic Engagement session: "Designing Vibes in a Science Museum: 
+From @Science vibes to @ 🤗 vibe". I will present this on behalf of my amazing colleagues, Derya Akbaba, Yin He, Måns Gezelius, 
+and Miriah Meyer.</p> <a href="https://lnkd.in/dmE7ey5S">Link</a></p>
+<p>Finally, we will be at the Interactive Demo with the Data & Me exhibit, currently on display at Visualiseringscenter C in Norrköping. 
+And also with a Physicalization.</p>
+<p>I am always happy to talk about data visualization, feminist and critical perspectives, and how to navigate the research process :) See you there!
+</p>`
   },
 
   {
