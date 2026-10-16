@@ -227,5 +227,23 @@ We found that in 57.3% of accidents, a man is affected, while in 42.7% is a woma
 By sharing our prompts and code, we aim to help other institutions and countries extract crucial information from free text to a controlled vocabulary of ILO. Future work includes the analysis of commuting accidents and occupational diseases.
  </p><p> <a href="https://link.springer.com/article/10.1186/s12889-025-24130-z">Link</a></p>`
 },
-
+{
+  id: 12, cat: 'papers',
+  label: 'data_stories_survey.jpg', w: 150, h: 150,
+  thumb: 'papers/data_stories_survey.jpg',
+  title: 'Núcleo Adela’s manifesto: Identity as Collective Creation',
+  meta: 'Article · CG&A 2024',
+  images: ['papers/data_stories_survey.jpg' ],
+  body: `<h2>Abstract</h2>
+  <p>
+Data stories are sequences of data facts connected through a meaningful narrative and combine data visualizations and 
+storytelling to convey information effectively. They have gained popularity due to data journalism, evolving into a hybrid practice 
+involving computer science, design, and storytelling. Creating data stories requires diverse skills however there is a lack of guidance. 
+We found one model that identifies the process of transforming data into visual stories following three stages; explore data, make a story and 
+tell a story. Based on this approach, we surveyed recent literature on data stories in order to classify their contributions to each of the 
+three stages. The contribution of this review is the proposal of guidelines for authors that provide greater detail to each stage and gaps for 
+future research. We hope that by better understanding the design process and the guidelines that emerge from it, we will enrich the quality of 
+the data stories and thus make them more meaningful and engaging to readers.
+  <a href="https://journals.sagepub.com/doi/full/10.1177/14738716241287116">Link</a></p>`
+},
 ];
