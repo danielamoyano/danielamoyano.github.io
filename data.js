@@ -47,7 +47,7 @@ The development of Sof+IA was guided by feminist principles of Artificial Intell
   },
 
    {
-    id: 3, cat: 'dissemination',
+    id: 3, cat: 'artifacts',
     label: 'zine3.jpg', w: 150, h: 200,
     thumb: 'projects/zine3.jpg',
     title: 'Dissemination beyond scientific paper',
@@ -246,4 +246,14 @@ future research. We hope that by better understanding the design process and the
 the data stories and thus make them more meaningful and engaging to readers.
   <a href="https://journals.sagepub.com/doi/full/10.1177/14738716241287116">Link</a></p>`
 },
+ {
+    id: 13, cat: 'teaching',
+    label: 'advanced_visualization.jpg', w: 110, h: 90,
+    thumb: 'teaching/advanced_visualization.jpg',
+    title: 'Advanced Visualization Design',
+    meta: 'Teaching · Datagénero',
+    images: ['teaching/advanced_visualization.jpg'],
+    body: `<p>Data is a critical aspect of nearly every aspect of our lives. We use data to make decisions about which study program might be best for us, what kinds of jobs might help us reach our goals, and where we might want to affordably live. And as data has seeped into our lives, so too have the visualizations that give us ways to think about, and with, data.
+In this course we will explore how visualizations work to represent data, how they shape our interpretations, and the choices we get to make in designing them. We will learn about the basic building blocks of visualizations, as well as critically examine the subjectivities and politics behind visualization design choices. The course will draw from a broad range of fields, including computer science, humanities, design, and social science in order to give us the framing to purposefully create our own visual stories of data. </p>`
+  },
 ];
